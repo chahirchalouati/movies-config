@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: AUTH-SERVICE
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/moviedb?createDatabaseIfNotExist=true
@@ -10,9 +8,9 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
-  jwt:
-    secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
-    expiration: 86400
+jwt:
+  secret: BvPa"£$%&/()=?23e0ì'12__"£$%&/(?^^_D8G_^^?)=41221564sad56eEByY
+  expiration: 43200000
 
 management:
   endpoints:
