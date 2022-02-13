@@ -13,12 +13,7 @@ spring:
     password: password
   jpa:
     hibernate:
-      ddl-auto: create
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
-        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
-      use-new-id-generator-mappings: true
-    database-platform: MYSQL
+      ddl-auto: update
     show-sql: true
 jwt:
   secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
