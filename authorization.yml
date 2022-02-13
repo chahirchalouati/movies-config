@@ -1,20 +1,21 @@
 spring:
   application:
     name: AUTH-SERVICE
-  cloud:
-    stream:
-      bindings:
-        userCreatedOutput-out-0:
-          destination: userCreatedOutput
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/moviedb?createDatabaseIfNotExist=true
     username: root
     password: password
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-jwt:
-  secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
-  expiration: 86400
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+  jwt:
+    secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
+    expiration: 86400
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
