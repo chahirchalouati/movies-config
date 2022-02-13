@@ -8,9 +8,9 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
-jwt:
-  secret: BvPa"£$%&/()=?23e0ì'12__"£$%&/(?^^_D8G_^^?)=41221564sad56eEByY
-  expiration: 43200000
+  jwt:
+    secret: BvPa"£$%&/()=?23e0ì'12__"£$%&/(?^^_D8G_^^?)=41221564sad56eEByY
+    expiration: 43200000
 
 management:
   endpoints:
