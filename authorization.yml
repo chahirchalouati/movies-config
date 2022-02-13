@@ -7,14 +7,19 @@ spring:
         userCreatedOutput-out-0:
           destination: userCreatedOutput
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb
-    username: postgres
-    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/moviedb?createDatabaseIfNotExist=true
+    username: root
+    password: password
   jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        ddl-auto: update
+    hibernate:
+      ddl-auto: create
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+      use-new-id-generator-mappings: true
+    database-platform: MYSQL
+    show-sql: true
 jwt:
   secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
   expiration: 86400
