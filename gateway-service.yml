@@ -1,0 +1,81 @@
+server:
+  port: 9999
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: -*
+        exclude: env,beans
+---
+spring:
+  profiles: dev
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: files
+          uri: lb://FILES-SERVICE
+          predicates:
+            - Path=/files/**
+        - id: authorizations
+          uri: lb://AUTH-SERVER
+          predicates:
+            - Path=/auth/**
+        - id: movies
+          uri: lb://MOVIES-SERVICE
+          predicates:
+            - Path=/movies/**
+  main:
+    web-application-type: reactive
+---
+spring:
+  profiles: test
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: files
+          uri: lb://FILES-SERVICE
+          predicates:
+            - Path=/files/**
+        - id: authorizations
+          uri: lb://AUTH-SERVER
+          predicates:
+            - Path=/auth/**
+        - id: movies
+          uri: lb://MOVIES-SERVICE
+          predicates:
+            - Path=/movies/**
+  main:
+    web-application-type: reactive
+---
+spring:
+  profiles: prod
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: files
+          uri: lb://FILES-SERVICE
+          predicates:
+            - Path=/files/**
+        - id: authorizations
+          uri: lb://AUTH-SERVER
+          predicates:
+            - Path=/auth/**
+        - id: movies
+          uri: lb://MOVIES-SERVICE
+          predicates:
+            - Path=/movies/**
+  main:
+    web-application-type: reactive
