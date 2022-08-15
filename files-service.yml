@@ -4,14 +4,3 @@ file:
   extensions: bmp, gif, jpeg, jpg, png, svg, tif, tiff ,WEBM ,MPG  ,MP2  ,MPEG  ,MPE  ,MPV ,OGG ,MP4  ,M4P  ,M4V ,AVI  ,WMV ,MOV  ,QT ,FLV  ,SWF ,AVCHD
   images:
     extensions: bmp, gif, jpeg, jpg, png, svg, tif, tiff
-logging:
-  level:
-    org:
-      springframework:
-        data: DEBUG
-management:
-  endpoints:
-    web:
-      exposure:
-        include: -*
-        exclude: env,beans
