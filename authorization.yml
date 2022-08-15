@@ -2,12 +2,12 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/moviedb?createDatabaseIfNotExist=true
-    username: root
-    password: password
+    username: '{cipher}b134939df7f83d5375986fdf360d631ab09d2107a21edd3445f06a4873ddd15a'
+    password: '{cipher}d5b31f8b86ce34b110218701b0c525faba24afb59df8a43c06a8afee4823ea14'
     jpa:
       hibernate:
         ddl-auto: update
       show-sql: true
 jwt:
-  secret: BvPa"£$%&/()=?23e0ì'12__"£$%&/(?^^_D8G_^^?)=41221564sad56eEByY
+  secret: '{cipher}af813ada3a9d48b16e71d2001be71953061ad91f78ad88c5ab9be9f3666686f5d6aae0d23b2993dd42f2f2043c3dc2b99783efd8ed259a4a49d1a081a7b3b38ec6a9c11bbe49c7b82d48f3a882e06a8699c37dd3f7053019ff17e8fc67b18155'
   expiration: 43200000
