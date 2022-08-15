@@ -2,7 +2,6 @@ server:
   port: 9999
 ---
 spring:
-  profiles: dev
   cloud:
     gateway:
       discovery:
@@ -23,9 +22,11 @@ spring:
             - Path=/movies/**
   main:
     web-application-type: reactive
+  config:
+    activate:
+      on-profile: dev
 ---
 spring:
-  profiles: test
   cloud:
     gateway:
       discovery:
@@ -46,9 +47,11 @@ spring:
             - Path=/movies/**
   main:
     web-application-type: reactive
+  config:
+    activate:
+      on-profile: test
 ---
 spring:
-  profiles: prod
   cloud:
     gateway:
       discovery:
@@ -69,3 +72,6 @@ spring:
             - Path=/movies/**
   main:
     web-application-type: reactive
+  config:
+    activate:
+      on-profile: prod
